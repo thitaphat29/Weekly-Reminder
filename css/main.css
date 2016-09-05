@@ -1,0 +1,201 @@
+*{
+	box-sizing: border-box;
+}
+
+/* ------ Welcome Page ------ */
+.welcome-page{
+	font-family: 'Open Sans', sans-serif;
+	width: 600px;
+	height: 300px;
+	border: 1px solid  #F7F7F7;
+	padding: 60px 0;
+	margin: 200px auto 0 auto;
+	text-align: center;
+	color: #555555;
+	box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+}
+.welcome-page h1 span{
+	color: #fdbb04;
+	font-size: 30px;
+}
+
+
+#authorize-button{
+	width: 120px;
+	height: 35px;
+	background-color: #4285F4;
+	text-align: left;
+	margin: 40px auto 0 auto;
+	cursor: pointer;
+}
+#authorize-button:hover{
+	box-shadow: 0 0 4px rgba(66,133,244,0.7);
+}
+
+#authorize-button img{
+	display: block;
+	margin: 0 auto;
+	padding-top: 6px;
+	width: 22px;
+
+}
+#authorize-button .img-logo{
+	display: inline-block;
+	border: 1px solid #4285F4;
+	width: 40px;
+	height: 35px;
+	background-color: #fff;
+}
+
+#authorize-button .btn-text{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 7px;
+	display: inline-block;
+	float: right;
+	width: 80px;
+	height: 35px;
+	
+}
+/* -------------------------- */
+
+.container{         
+	margin-top: 80px;
+	width: 70%;
+}
+
+.menu-bar{
+	height: 50px;
+	padding: 9px 10px;
+	border: 1px solid #F7F7F9;
+	background-color: #F7F7F9;
+	margin-top: 30px;
+}
+
+.menu-bar h5{
+	display: inline-block;
+}
+
+.btn-add-task{
+	width: 100px;
+	height: 30px;
+	float: right;
+}
+
+/* ------ Calendar ------ */
+
+.calendar-list{
+	border: 1px solid  #F7F7F9;
+	text-align: center;
+	background-color: #469ccd;
+}
+
+
+.calendar-icon{
+	background-image: url("../images/calendar_icon2.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 120px;
+	height: 128px;
+	margin: 80px 15px;
+	text-align: center;	
+	display: inline-block;	
+	cursor: pointer;
+	color: #68697e;
+}
+
+
+.header{
+	width: 100%;
+	height: 25%;
+	font-size: 20px;
+	color: #fff;
+	padding-top: 15px;
+}
+
+.calendar-day{
+	width: 100%;
+	height: 53%;
+	font-size: 40px;
+	padding-top: 20px;
+	font-weight: bold;
+	color: #68697e;
+}
+
+.calendar-month{
+	text-align: right;
+	padding-right: 12px;
+	color: #68697b;
+}
+
+
+/* ------ Display List ------ */
+#display-list,
+#to-do-list{
+	list-style: none;
+}
+
+#display-list{
+	border: 1px solid lightgray;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.list{
+	border: 1px solid lightgray;
+	min-height: 35px;
+	padding: 4px 4px;
+	display: -webkit-flex;
+	display: flex;
+	cursor: pointer;
+}
+
+.list:hover{
+	background-color: #E1F5FE;
+}
+
+.total-tasks,
+.event-name,
+.event-location,
+.delelteEvent{
+  	flex-direction: column;
+}
+
+
+/* ------ Add Task ------ */
+.add-task, .new-task h4{
+	width: 80%;
+	margin: 0 auto;
+	padding: 30px 10px;
+}
+.new-task h4{
+	text-align: center;
+}
+
+#to-do-list{
+	background-color: #f7eece;
+	border-radius: 4px;
+	padding: 20px 0 30px 20px;
+}
+
+.list-item{
+	border-top: none;
+	border-right: none;
+	display: inline-block;
+	margin-left: 8px;
+	width: 85%;
+	height: 30px;
+}
+
+#to-do-list input[type ="checkbox"]{
+	
+}
+
+
+
+.btn-saveTask{
+	text-align: center;
+	width: 100%;
+}

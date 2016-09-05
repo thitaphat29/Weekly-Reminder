@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Daily Pins Application</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+	<div class="container new-task">
+		<h4>New task</h4>
+		<div class="row add-task">
+			<form>
+
+				<div class="col-sm-12 form-group">
+					<label for="subject">Subject</label>
+					<input type="text" class="form-control" id="subject" placeholder="e.g.., Shopping">
+				</div>
+
+				<div class="col-sm-6 form-group">
+					<label for="datetimepicker1'">Start DateTime</label>
+					<div class='input-group date' id='txtStartDateTime'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+				</div>
+                <div class="col-sm-6 form-group">
+					<label for="datetimepicker2'">End DateTime</label>
+					<div class='input-group date' id='txtEndDateTime'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+				</div>
+
+				<div class="col-sm-12 form-group">
+					<label for="place">Where</label>
+					<input type="text" class="form-control" id="place" placeholder="e.g.., Publix">
+                    <input type="button" id="btnLocationSearch" class="btn btn-default" value="Search"></input>
+                    <div id="map" style="display:none"></div>
+					<div class="show-location">
+                        <ul id="place-list">
+                        </ul>
+                    </div>
+				</div>
+
+				<div class="col-sm-12 form-group">
+					<br>
+					<label for="to-do-list">To-do List</label>
+					<input type="button" id="btnAddTask" class="btn btn-default" value="Add Task"></input>
+					<ul id="to-do-list">
+						<li><input type="checkbox"><input type="text" class="list-item" /><input type="button" class="task-delete btn btn-default" value="Delete"/></li>
+					</ul>
+				</div>
+
+				<div class="col-sm-12 btn-saveTask">
+					<input type="button" id="btnSave" class="btn btn-default" value="Save Task"/>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+ 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/addApp.js"></script>    
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuskLyWa4eVg4SHxT60jGdGJHTS_uDa2o&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>

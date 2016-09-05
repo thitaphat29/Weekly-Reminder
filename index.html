@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Page</title>
+
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="838719474088-3qi1f0nsp788i0ao2vrdmhkj55h91u1d.apps.googleusercontent.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+<body>
+    <div class="welcome-page">
+        <h1>Welcome to <span> Weekly Reminder</span></h1>
+          <div id="authorize-button" onclick="handleAuthClick(event)">
+              <div class="img-logo">
+                <img src="images/google_icon.png">
+              </div>
+              <div class="btn-text">Sign in</div>
+          </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+
+    
+    <script>
+      var googleUserId = "";
+      var apiKey = "AIzaSyCuskLyWa4eVg4SHxT60jGdGJHTS_uDa2o";
+      
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        googleUserId = profile.getEmail();
+        console.log("ID Token: " + id_token);
+        console.log(profile);
+        window.location = "home.html";
+      };
+
+    </script>
+  </body>
+
+</html>

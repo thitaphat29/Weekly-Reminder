@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weekly Reminder Application</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="container">
+
+			
+
+			<!-- Weekly Calendar -->
+			<section class="row center calendar-list">
+				
+
+				<div class="calendar-icon">
+					<div class="header">SUN</div>
+					<div class="calendar-day day-index1"></div>	
+					<div class="calendar-month month-index1"></div>
+					<div class="date date-value1 hidden"></div>
+				</div>
+
+				<div class="calendar-icon">	
+					<div class="header">MON</div>
+					<div class="calendar-day day-index2"></div>
+					<div class="calendar-month month-index2"></div>
+					<div class="date date-value2 hidden"></div>
+				</div>
+
+				<div class="calendar-icon">
+					<div class="header">TUE</div>
+					<div class="calendar-day day-index3"></div>
+					<div class="calendar-month month-index3"></div>
+					<div class="date date-value3 hidden"></div>
+				</div>
+
+				<div class="calendar-icon">
+					<div class="header">WED</div>
+					<div class="calendar-day day-index4"></div>
+					<div class="calendar-month month-index4"></div>
+					<div class="date date-value4 hidden"></div>
+				</div>
+
+				<div class="calendar-icon">	
+					<div class="header">THU</div>
+					<div class="calendar-day day-index5"></div>	
+					<div class="calendar-month month-index5"></div>
+					<div class="date date-value5 hidden"></div>
+				</div>
+
+				<div class="calendar-icon">		
+					<div class="header">FRI</div>
+					<div class="calendar-day day-index6"></div>	
+					<div class="calendar-month month-index6"></div>
+					<div class="date date-value6 hidden"></div>
+				</div>
+
+				<div class="calendar-icon">	
+					<div class="header">SAT</div>
+					<div class="calendar-day day-index7"></div>	
+					<div class="calendar-month month-index7"></div>
+					<div class="date date-value7 hidden"></div>
+				</div>
+
+			</section>
+			<!-- End Weekly Calendar -->
+
+			<div class="row menu-bar">
+				<h5>: : Events</h5>
+				<button class="btn btn-primary btn-add-task">Add Events</button>
+			</div>
+			<!-- Display Note Bar -->
+			<ul class="row" id="display-list">
+				
+			</ul>
+			<!-- End Display Note Bar -->
+		
+	</div>
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+	<script>
+		
+	</script>
+</body>
+</html>
