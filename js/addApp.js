@@ -50,7 +50,7 @@ function listTasks(taskID){
 
       $.each(tasks, function(key, value){
         if(value.title!=""){
-          $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" value="'+value.title+'"/><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
+          $("#to-do-list").append('<li><input type="checkbox" ><input type="text" class="list-item" value="'+value.title+'"/><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
         }
       });
      
@@ -177,5 +177,6 @@ $(document).ready(function(){
       }   
   });
 
+  $("#btnAddTask").click();
 
 });

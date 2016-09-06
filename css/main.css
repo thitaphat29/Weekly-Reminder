@@ -233,13 +233,43 @@ body{
 	font-weight: 300;
 }
 
-#place{
-	width: 90%;
+.form-group input{
+	width: 520px;
 }
 
-.btn-info{
-	width: 72px;
+.search-box {
+    padding: 5px 0;
+    width: 520px;
+    height: 35px;
+    position: relative;
+    float: left;
+    line-height: 22px;
 }
+
+.search-box input {
+    position: absolute;
+    width: 480px;
+    margin-left: 0px;
+    float: Left;
+    height: 35px;
+    line-height: 18px;
+}
+
+.search-box:hover input, .search input:focus {
+    width: 480px;
+    margin-left: 0px;
+}
+
+.btn-info {
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    
+}
+
 
 .tasks-display{
 	background-color: #fff;
@@ -259,11 +289,11 @@ body{
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	background-color: #eff6e9;
+	border-bottom: 1px solid rgba(232,232,232,0.3);
 	display: inline-block;
 	margin-left: 8px;
 	margin-bottom: 8px;
-	width: 92%;
+	width: 440px;
 	height: 30px;
 	display: inline-block;
 }
@@ -271,7 +301,7 @@ body{
 	display: inline-block;
 	color: #b1374e;
 	font-size: 20px;
-	padding-left: 12px;
+	padding-right: 0px;
 }
 
 #btnAddTask{

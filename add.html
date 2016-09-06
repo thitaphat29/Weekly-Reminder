@@ -15,10 +15,10 @@
 
 	<div class="container">
 		<div class="row ">
-			<div class="col-sm-12 col-md-8 col-md-offset-2 new-task">
+			<div class="col-sm-12 col-md-6 col-md-offset-3 new-task">
 				Create Reminder
 			</div>
-			<div class="col-sm-12 col-md-8 col-md-offset-2 add-task">
+			<div class="col-sm-12 col-md-6 col-md-offset-3 add-task">
 				<form>
 
 				<div class="col-sm-12 form-group">
@@ -47,9 +47,12 @@
 
 				<div class="col-sm-12 form-group">
 					<label for="place">Where</label>
-					<div class="form-inline">
-						<input type="text" class="form-control" id="place" placeholder="e.g.., Publix">
-	                    &nbsp;<input type="button" id="btnLocationSearch" class="btn btn-info" value="Search"></input>
+					<div class="search-box">
+						<!--<input type="text" class="form-control" id="place" placeholder="e.g.., Publix">
+	                    &nbsp;<input type="button" id="btnLocationSearch" class="btn btn-info" value="Search"></input>-->
+
+	                    <input type="text" id="place" class="form-control input-sm" maxlength="64" placeholder="e.g.., Publix" />
+ 						<button type="submit" class="btn btn-info btn-sm" id="btnLocationSearch">Search</button>
                     </div>
                     <div id="map" style="display:none"></div>
 					<div class="show-location">
@@ -58,7 +61,7 @@
                     </div>
 				</div>
 
-				<div class="col-sm-12 form-group">
+				<div class="col-sm-12">
 					<br>
 					
 					<ul id="to-do-list" class="tasks-display">
@@ -68,14 +71,8 @@
 						</div>
 						<hr>
 
-						<li>
-							<input type="checkbox">
-							<input type="text" class="list-item" />
-							<div class="task-delete" value="Delete"><i class="fa fa-times" aria-hidden="true" ></i></div>
-						</li>
 					</ul>
 				</div>
-
 				<div class="col-sm-12 btn-saveTask">
 					<input type="button" id="btnSave" class="btn btn-default" value="SAVE REMINDER"/>
 				</div>
