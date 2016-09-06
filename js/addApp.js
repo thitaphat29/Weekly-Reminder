@@ -167,8 +167,8 @@ $(document).ready(function(){
       saveCalendarEvent();
   });
 
-  $("#btnAddTask").click(function(){
-      $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" /><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
+  $("#btnAddTask").on("click",function(){
+      $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" /><div class="task-delete" value="Delete"><i class="fa fa-times" aria-hidden="true" ></i></div></li>');
   });
 
   $("#to-do-list").on("click",".task-delete", function(){

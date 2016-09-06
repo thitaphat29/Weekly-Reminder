@@ -76,14 +76,21 @@ body{
 
 /* ------ Calendar ------ */
 
-.year-header{
+.year-header,
+.new-task{
 	background-color: #fff;
-	height: 75px;
 	color: #5abee2;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 	border: 1px solid  #f2f2f2;
 	text-align: center;
+	padding: 20px 0;
+	font-weight: 300;
+	font-size: 30px;
+}
+
+.new-task{
+	
 }
 
 .weekly-calendar{
@@ -216,33 +223,75 @@ body{
 
 /* ------ Add Task ------ */
 
-
-.add-task, .new-task h4{
-	width: 80%;
-	margin: 0 auto;
-	padding: 30px 10px;
+.add-task{
+	padding: 40px 30px;
+	border-top: 5px solid #2fbfc0;
+	background-color: #f6f7f9;
 }
-.new-task h4{
-	text-align: center;
+
+.add-task label{
+	font-weight: 300;
+}
+
+#place{
+	width: 90%;
+}
+
+.btn-info{
+	width: 72px;
+}
+
+.tasks-display{
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);	
+}
+.tasks-display label{
+	color: #1fb2c4;
+	font-size: 16px;
 }
 
 #to-do-list{
-	background-color: #f7eece;
-	border-radius: 4px;
-	padding: 20px 0 30px 20px;
+	padding: 20px 20px 30px 20px;
 }
 
 .list-item{
 	border-top: none;
+	border-left: none;
 	border-right: none;
+	background-color: #eff6e9;
 	display: inline-block;
 	margin-left: 8px;
-	width: 85%;
+	margin-bottom: 8px;
+	width: 92%;
 	height: 30px;
+	display: inline-block;
+}
+.task-delete{
+	display: inline-block;
+	color: #b1374e;
+	font-size: 20px;
+	padding-left: 12px;
+}
+
+#btnAddTask{
+	color: #1fb2c4;
+	display: inline-block;
+	font-size: 20px;
+	float: right;
+	
+}
+
+#btnSave{
+	margin-top: 20px;
+	background-color: #2fb1c7;
+	color: #fff;
+	padding: 10px 15px;
+	border: none;
 }
 
 #to-do-list input[type ="checkbox"]{
-	
+	font-size: 20px;
 }
 
 

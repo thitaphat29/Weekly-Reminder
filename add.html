@@ -6,18 +6,23 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+	 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body>
-	<div class="container new-task">
-		<h4>New task</h4>
-		<div class="row add-task">
-			<form>
+
+	<div class="container">
+		<div class="row ">
+			<div class="col-sm-12 col-md-8 col-md-offset-2 new-task">
+				Create Reminder
+			</div>
+			<div class="col-sm-12 col-md-8 col-md-offset-2 add-task">
+				<form>
 
 				<div class="col-sm-12 form-group">
-					<label for="subject">Subject</label>
+					<label for="subject">Event Name</label>
 					<input type="text" class="form-control" id="subject" placeholder="e.g.., Shopping">
 				</div>
 
@@ -42,8 +47,10 @@
 
 				<div class="col-sm-12 form-group">
 					<label for="place">Where</label>
-					<input type="text" class="form-control" id="place" placeholder="e.g.., Publix">
-                    <input type="button" id="btnLocationSearch" class="btn btn-default" value="Search"></input>
+					<div class="form-inline">
+						<input type="text" class="form-control" id="place" placeholder="e.g.., Publix">
+	                    &nbsp;<input type="button" id="btnLocationSearch" class="btn btn-info" value="Search"></input>
+                    </div>
                     <div id="map" style="display:none"></div>
 					<div class="show-location">
                         <ul id="place-list">
@@ -53,25 +60,39 @@
 
 				<div class="col-sm-12 form-group">
 					<br>
-					<label for="to-do-list">To-do List</label>
-					<input type="button" id="btnAddTask" class="btn btn-default" value="Add Task"></input>
-					<ul id="to-do-list">
-						<li><input type="checkbox"><input type="text" class="list-item" /><input type="button" class="task-delete btn btn-default" value="Delete"/></li>
+					
+					<ul id="to-do-list" class="tasks-display">
+						<label for="to-do-list">To Do List</label>
+						<div id="btnAddTask" value="Add Task">
+							<i class="fa fa-plus-circle" aria-hidden="true"></i>
+						</div>
+						<hr>
+
+						<li>
+							<input type="checkbox">
+							<input type="text" class="list-item" />
+							<div class="task-delete" value="Delete"><i class="fa fa-times" aria-hidden="true" ></i></div>
+						</li>
 					</ul>
 				</div>
 
 				<div class="col-sm-12 btn-saveTask">
-					<input type="button" id="btnSave" class="btn btn-default" value="Save Task"/>
+					<input type="button" id="btnSave" class="btn btn-default" value="SAVE REMINDER"/>
 				</div>
 
 			</form>
+			</div>
 		</div>
+		
+			
+		
 	</div>
 
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="js/addApp.js"></script>    
+	<script src="https://use.fontawesome.com/72ac6a311b.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuskLyWa4eVg4SHxT60jGdGJHTS_uDa2o&libraries=places&callback=initMap" async defer></script>
 </body>
