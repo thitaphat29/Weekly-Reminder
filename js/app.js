@@ -78,7 +78,7 @@ function listUpcomingEvents() {
     $("#display-list li").remove();
 
     if(events.length == 0){
-       $("#display-list").append('<li class="list"><div class="col-md-12">No Events</div></li>');
+       $("#display-list").append('<li class="list"><div class="col-md-12 event-name">No Events</div></li>');
 
     }else{
       for(var i=0; i<events.length; i++){
@@ -101,10 +101,12 @@ function listUpcomingEvents() {
         $(".total-tasks").text(total_tasks);
         $("#display-list").append('<li class="list">'+
                           '<div class="col-md-1 total-tasks">'+total_tasks+'</div>'+
-                          '<div class="col-md-7 event-name">'+subject+'<br>'+eventTime+'</div>'+
-                          '<div class="col-md-2 event-location">'+location+'</div>'+
-                          '<div class="col-md-1 editEvent"><input type="button" class="btn-edit btn btn-default" value="Edit"/></div>'+
-                          '<div class="col-md-1 deleteEvent"><input type="button" class="btn-delete btn btn-default" value="Delete"/></div>'+
+                          '<div class="col-md-9 event-name">'+subject+'<br><div class="event-time">'+eventTime+'</div>'+
+                          '<div class="event-location">'+location+'</div></div>'+
+                          '<div class="col-md-2 btn-event">'+
+                          '<div class="editEvent"><i class="fa fa-pencil btn-edit" aria-hidden="true" value="Edit"></i></div>'+
+                          '<div class="deleteEvent"><i class="fa fa-trash btn-delete" aria-hidden="true" value="Delete"></i></div>'+
+                          '</div>'+
                           '<div class="eventid hidden">'+events[i].id+'</div>'+
                           '<div class="taskListName hidden">'+taskListName+'</div>'+
                           '</li>')
