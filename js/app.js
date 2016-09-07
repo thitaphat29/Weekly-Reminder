@@ -100,10 +100,10 @@ function listUpcomingEvents() {
         
         $(".total-tasks").text(total_tasks);
         $("#display-list").append('<li class="list">'+
-                          '<div class="col-md-1 total-tasks">'+total_tasks+'</div>'+
-                          '<div class="col-md-9 event-name">'+subject+'<br><div class="event-time">'+eventTime+'</div>'+
+                          '<div class="col-sm-1 col-xs-1 total-tasks">'+total_tasks+'</div>'+
+                          '<div class="col-sm-9 col-xs-9 event-name">'+subject+'<br><div class="event-time">'+eventTime+'</div>'+
                           '<div class="event-location">'+location+'</div></div>'+
-                          '<div class="col-md-2 btn-event">'+
+                          '<div class="col-sm-2 col-xs-2 btn-event">'+
                           '<div class="editEvent"><i class="fa fa-pencil btn-edit" aria-hidden="true" value="Edit"></i></div>'+
                           '<div class="deleteEvent"><i class="fa fa-trash btn-delete" aria-hidden="true" value="Delete"></i></div>'+
                           '</div>'+
@@ -227,13 +227,13 @@ $(document).ready( function() {
     });
     
     $("#display-list").on("click",".btn-edit", function(){
-        var eventID = $(this).parent().parent().find(".eventid").text();
+        var eventID = $(this).parent().parent().parent().find(".eventid").text();
         console.log(eventID);
         window.location = "update.html?eventID="+eventID;
     });
 
     $("#display-list").on("click",".btn-delete", function(){
-        var eventID = $(this).parent().parent().find(".eventid").text();
+        var eventID = $(this).parent().parent().parent().find(".eventid").text();
         console.log(eventID);
         if(confirm("Do you want to delete this event?")){
           deleteEvent(eventID);

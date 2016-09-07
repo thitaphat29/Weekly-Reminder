@@ -50,7 +50,8 @@ function listTasks(taskID){
 
       $.each(tasks, function(key, value){
         if(value.title!=""){
-          $("#to-do-list").append('<li><input type="checkbox" ><input type="text" class="list-item" value="'+value.title+'"/><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
+          //$("#to-do-list").append('<li><input type="checkbox" ><input type="text" class="list-item" value="'+value.title+'"/><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
+          $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" value="'+value.title+'" /><div class="task-delete" value="Delete"><i class="fa fa-times" aria-hidden="true" ></i></div></li>');
         }
       });
      
@@ -62,7 +63,10 @@ function displayLocations(results, status){
   $("#place-list li").remove();
 
   $.each(results, function(key, value){
-    $("#place-list").append('<li class="list"><div class="place-name">'+value.name+'</div><div class="place-address">'+value.formatted_address+'</div><div hidden>'+value.place_id+'</div></li>');
+    $("#place-list").append('<li class="place-list">'+
+                    '<div class="col-md-12"><p class="place-name">'+value.name+ '</p>'+
+                    '<p class="place-address">'+value.formatted_address+'</p></div></li>'+
+                    '<div hidden>'+value.place_id+'</div></li>');
   });
 }
 
@@ -105,6 +109,8 @@ function saveTaskList(taskListName){
 
   request.execute(function(resp){
     var taskListID = resp.id;
+    var taskCount = $("#to-do-list li").length;
+    var iCount = 0;
     $("#to-do-list li").each(function(){
       var taskName = $(this).find('.list-item').val();
       if(taskName!=""){
@@ -114,6 +120,10 @@ function saveTaskList(taskListName){
         });
 
         taskRequest.execute(function(resp){
+          iCount++;
+          if(iCount==taskCount){
+            window.location = "home.html";
+          }
           console.log(resp);
         });
       }
@@ -158,13 +168,18 @@ $(document).ready(function(){
       e.preventDefault();
   });
 
-  $("#place-list").on("click",".list", function(){
+  $("#place-list").on("click",".place-list", function(){
       var placeName = $(this).find(".place-name").text();
       $("#place").val(placeName);
+      $("#place-list li").remove();
   });
 
   $("#btnSave").click(function(){
       saveCalendarEvent();
+  });
+
+  $("#btnBack").click(function(){
+    window.location = "home.html";
   });
 
   $("#btnAddTask").on("click",function(){

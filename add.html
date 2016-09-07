@@ -44,16 +44,16 @@
                         </span>
                     </div>
 				</div>
+			
 
 				<div class="col-sm-12 form-group">
-					<label for="place">Where</label>
+					
 					<div class="search-box">
-						<!--<input type="text" class="form-control" id="place" placeholder="e.g.., Publix">
-	                    &nbsp;<input type="button" id="btnLocationSearch" class="btn btn-info" value="Search"></input>-->
-
+						<label for="place">Where</label>
 	                    <input type="text" id="place" class="form-control input-sm" maxlength="64" placeholder="e.g.., Publix" />
- 						<button type="submit" class="btn btn-info btn-sm" id="btnLocationSearch">Search</button>
+ 						<button type="submit" class="btn btn-info btn-sm btn-search" id="btnLocationSearch">Search</button>
                     </div>
+
                     <div id="map" style="display:none"></div>
 					<div class="show-location">
                         <ul id="place-list">
@@ -62,7 +62,6 @@
 				</div>
 
 				<div class="col-sm-12">
-					<br>
 					
 					<ul id="to-do-list" class="tasks-display">
 						<label for="to-do-list">To Do List</label>
@@ -74,7 +73,8 @@
 					</ul>
 				</div>
 				<div class="col-sm-12 btn-saveTask">
-					<input type="button" id="btnSave" class="btn btn-default" value="SAVE REMINDER"/>
+					<input type="button" id="btnBack" class="btn btn-default" value="BACK"/>
+					<input type="button" id="btnSave" class="btn btn-info" value="SAVE REMINDER"/>
 				</div>
 
 			</form>

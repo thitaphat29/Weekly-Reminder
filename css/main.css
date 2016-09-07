@@ -69,7 +69,7 @@ body{
 
 .container{         
 	margin-top: 80px;
-	width: 100%;
+	/*width: 100%;*/
 }
 
 
@@ -139,8 +139,7 @@ body{
 }
 
 .menu-bar{
-	margin: 30px auto 5px auto;
-	width: 720px;
+	margin: 30px 17px 5px 17px;
 	text-align: right;
 	color: #2fb1c7;
 }
@@ -151,10 +150,13 @@ body{
 }
 
 /* ------ Display List ------ */
+
+
 .display-area{
 	background-color: #f6f7f9;
 	padding-bottom: 30px;
 	min-height: 600px;
+
 }
 
 #display-list,
@@ -164,11 +166,11 @@ body{
 }
 .event-lists{
 	margin: 0 auto;
-	width: 720px;
+	
 }
 
 .list{
-	margin-bottom: 10px;
+	margin: 0 17px 10px 17px;
 	background-color: #fff;
 	border-radius: 2px;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
@@ -207,7 +209,7 @@ body{
 
 .event-location{
 	padding-bottom: 10px;
-	color: #ff9e19;
+	color: #ffb319;
 }
 
 .editEvent,
@@ -222,6 +224,107 @@ body{
 }
 
 /* ------ Add Task ------ */
+/* Desktops */
+@media screen and (min-width: 992px){
+	.new-task,
+	.add-task{
+		width: 610px;
+	}
+
+	.calendar-icon{
+		width: 72px;
+		height: 80px;
+		margin-bottom: 30px;
+		text-align: center;	
+		display: inline-block;	
+		cursor: pointer;
+		color: #68697e;
+	}
+
+	.calendar-icon:not(:last-child),
+	.day-header:not(:last-child){
+		margin-right: 10px;
+	}
+	.day-header{
+		margin-top: 30px;
+		width: 72px;
+		display: inline-block;	
+		color: #fff;
+	}
+
+	.calendar-day{
+		width: 100%;
+		height: 78%;
+		font-size: 30px;
+		padding-top: 24px;
+		color: #48494b;
+	}
+
+	.calendar-month{
+		text-align: right;
+		font-size: 11px;
+		padding-right: 10px;
+		color: #a3a8ac;
+	}
+
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1200px){
+	.container{
+
+	}
+
+	.year-header,
+	.weekly-calendar,
+	.display-area{
+		width: 790px;
+	}
+
+	.calendar-icon{
+		background-image: url("../images/calendar_icon.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 82px;
+		height: 90px;
+		margin-bottom: 30px;
+		text-align: center;	
+		display: inline-block;	
+		cursor: pointer;
+		color: #68697e;
+	}
+
+	.calendar-icon:not(:last-child),
+	.day-header:not(:last-child){
+		margin-right: 20px;
+	}
+	.day-header{
+		margin-top: 30px;
+		width: 82px;
+		display: inline-block;	
+		color: #fff;
+	}
+
+	.calendar-day{
+		width: 100%;
+		height: 78%;
+		font-size: 40px;
+		padding-top: 24px;
+		color: #48494b;
+	}
+
+	.calendar-month{
+		text-align: right;
+		font-size: 11px;
+		padding-right: 10px;
+		color: #a3a8ac;
+	}
+}
+
+/* Phones */
+@media screen and (max-width: 768px){
+
+}
 
 .add-task{
 	padding: 40px 30px;
@@ -233,13 +336,10 @@ body{
 	font-weight: 300;
 }
 
-.form-group input{
-	width: 520px;
-}
-
+/* --- search section ---*/
 .search-box {
     padding: 5px 0;
-    width: 520px;
+    width: 100%;
     height: 35px;
     position: relative;
     float: left;
@@ -247,35 +347,71 @@ body{
 }
 
 .search-box input {
+	z-index: 20;
     position: absolute;
-    width: 480px;
     margin-left: 0px;
     float: Left;
     height: 35px;
     line-height: 18px;
 }
 
-.search-box:hover input, .search input:focus {
-    width: 480px;
-    margin-left: 0px;
-}
 
-.btn-info {
+.btn-search {
+	z-index: 20;
     height: 35px;
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 32px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     
 }
 
+.show-location{
+	margin: 80px 0 0 0;
+}
+
+#place-list{
+	padding-left: 0;
+}
+
+.place-address{
+	font-size: 10px;
+	color: #ffb319;
+}
+
+.place-list{
+	padding: 15px 10px 3px 10px;
+	list-style: none;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	min-height: 40px;
+	display: -webkit-flex;
+	display: flex;
+	cursor: pointer;
+}
+
+.place-list p{
+	line-height: 10px;
+}
+
+.place-list:hover,
+.list:hover{
+	background-color: #fbfcd7;
+}
+
+/* --- end search section ---*/
 
 .tasks-display{
+	width: 100%;
+	margin-top: 15px;
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.2);	
 }
+
 .tasks-display label{
 	color: #1fb2c4;
 	font-size: 16px;
@@ -293,7 +429,7 @@ body{
 	display: inline-block;
 	margin-left: 8px;
 	margin-bottom: 8px;
-	width: 440px;
+	width: 92%;
 	height: 30px;
 	display: inline-block;
 }
@@ -301,7 +437,6 @@ body{
 	display: inline-block;
 	color: #b1374e;
 	font-size: 20px;
-	padding-right: 0px;
 }
 
 #btnAddTask{
@@ -312,12 +447,18 @@ body{
 	
 }
 
-#btnSave{
+#btnSave, #btnBack{
 	margin-top: 20px;
-	background-color: #2fb1c7;
-	color: #fff;
 	padding: 10px 15px;
 	border: none;
+}
+
+#btnSave{
+	color: #fff;
+}
+
+#btnBack{
+	margin-right:10px;
 }
 
 #to-do-list input[type ="checkbox"]{

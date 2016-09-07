@@ -72,7 +72,8 @@ function listTasks(taskID){
 
       $.each(tasks, function(key, value){
         if(value.title!=""){
-          $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" value="'+value.title+'"/><input type="button" class="task-delete btn btn-default" value="Delete"/><div class="task-id" hidden>'+value.id+'</li>');
+        //  $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" value="'+value.title+'"/><input type="button" class="task-delete btn btn-default" value="Delete"/><div class="task-id" hidden>'+value.id+'</li>');
+          $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" value="'+value.title+'" /><div class="task-delete" value="Delete"><i class="fa fa-times" aria-hidden="true" ></i></div><div class="task-id" hidden>'+value.id+'</li></li>');
         }
       });
      
@@ -111,7 +112,10 @@ function displayLocations(results, status){
   $("#place-list li").remove();
 
   $.each(results, function(key, value){
-    $("#place-list").append('<li class="list"><div class="place-name">'+value.name+'</div><div class="place-address">'+value.formatted_address+'</div><div hidden>'+value.place_id+'</div></li>');
+    $("#place-list").append('<li class="place-list">'+
+                    '<div class="col-md-12"><p class="place-name">'+value.name+ '</p>'+
+                    '<p class="place-address">'+value.formatted_address+'</p></div></li>'+
+                    '<div hidden>'+value.place_id+'</div></li>');
   });
 }
 
@@ -158,16 +162,21 @@ function saveTaskList(taskListName){
 
     request.execute(function(resp){
       taskListID = resp.id;
+      var taskCount = $("#to-do-list li").length;
+      var iCount = 0;
       $("#to-do-list li").each(function(){
         var taskName = $(this).find('.list-item').val();
         if(taskName!=""){
           var taskRequest = gapi.client.tasks.tasks.insert({
             'tasklist':taskListID,
-            'title':taskName
+            'title':$(this).find('.list-item').val()
           });
 
           taskRequest.execute(function(resp){
-            console.log(resp);
+            iCount++;
+            if(iCount==taskCount){
+              window.location = "home.html";
+            }
           });
         }
       });
@@ -184,28 +193,38 @@ function saveTaskList(taskListName){
         console.log(resp);
       });
     }
-
+    
+    var taskCount = $("#to-do-list li").length;
+    var iCount = 0;
     $("#to-do-list li").each(function(){
       var taskName = $(this).find('.list-item').val();
       var taskID = $(this).find('.task-id').text();
-      if(taskID!=""){
-        var taskUpdateRequest = gapi.client.tasks.tasks.update({
+      console.log(taskListID);
+      console.log($(this).find('.task-id').text());
+      if($(this).find('.task-id').text()!=""){
+        var taskUpdateRequest = gapi.client.tasks.tasks.patch({
             'tasklist':taskListID,
-            'task':taskID,
-            'title':taskName
+            'task':$(this).find('.task-id').text(),
+            'title':$(this).find('.list-item').val()
         });
         taskUpdateRequest.execute(function(resp){
-          console.log(resp);
+          iCount++;
+          if(iCount==taskCount){
+            window.location = "home.html";
+          }
         });
       }else{
         if(taskName!=""){
           var taskRequest = gapi.client.tasks.tasks.insert({
             'tasklist':taskListID,
-            'title':taskName
+            'title':$(this).find('.list-item').val()
           });
 
           taskRequest.execute(function(resp){
-            console.log(resp);
+            iCount++;
+            if(iCount==taskCount){
+              window.location = "home.html";
+            }
           });
         }
       }
@@ -267,13 +286,18 @@ $(document).ready(function(){
       e.preventDefault();
   });
 
-  $("#place-list").on("click",".list", function(){
+  $("#place-list").on("click",".place-list", function(){
       var placeName = $(this).find(".place-name").text();
       $("#place").val(placeName);
+      $("#place-list li").remove();
   });
 
   $("#btnSave").click(function(){
     saveCalendarEvent();
+  });
+
+  $("#btnBack").click(function(){
+    window.location = "home.html";
   });
 
   $("#to-do-list").on("click",".task-delete", function(){
@@ -284,7 +308,8 @@ $(document).ready(function(){
   });
 
   $("#btnAddTask").click(function(){
-      $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" /><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
+     // $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" /><input type="button" class="task-delete btn btn-default" value="Delete"/></li>');
+      $("#to-do-list").append('<li><input type="checkbox"><input type="text" class="list-item" /><div class="task-delete" value="Delete"><i class="fa fa-times" aria-hidden="true" ></i></div></li>');
   });
 
 });
