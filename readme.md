@@ -1,10 +1,7 @@
 #Weekly Reminder
 Thinkful (<a href="http://www.thinkful.com">http://www.thinkful.com</a>) end of course Capstone project - a responsive weekly reminder application that offers Google users account to create a reminder by setting a calendar event combined with a location and to do list of each one.
 
-![Screenshots] (https://github.com/thitaphat29/Weekly-Reminder/blob/master/images/ScreenShot_Index.jpg)
-![Screenshots] (https://github.com/thitaphat29/Weekly-Reminder/blob/master/images/ScreenShot_Home.jpg)
-![Screenshots] (https://github.com/thitaphat29/Weekly-Reminder/blob/master/images/ScreenShot_AddReminder.jpg)
-![Screenshots] (https://github.com/thitaphat29/Weekly-Reminder/blob/master/images/ScreenShot_UpdateReminder.jpg)
+![Screenshots] (https://github.com/thitaphat29/Weekly-Reminder/blob/master/images/screens.jpg)
 
 ##Introduction
 Weekly Reminder Applicaiton is designed for Google users account to use the access of combination of Google Calendar, Google Places, and Google Task in order to create the event reminder. The application will show a current week starting from Sunday to Saturday. The current date will set of a default and will show all the events of that day. Users will be able to click at any days of the current week to see if there is any events set.
