@@ -16,15 +16,8 @@ The Wireframs is design along with the work-flow. This app is also designed to w
 
 ![Screenshots] (https://github.com/thitaphat29/Weekly-Reminder/blob/master/images/responsive.jpg)
 
-<<<<<<< HEAD
-		<section class="site">
-			<h3>Live Site</h3>
-			<hr>
-			<p>You can access Weekly Reminder at <a href="https://thitaphat29.github.io/Weekly-Reminder/">https://thitaphat29.github.io/Weekly-Reminder/</a></p>
-		</section>
-=======
 ##Live Site
-You can access Password Vault at https://thitaphat29.github.io/Weekly-Reminder/
+You can access Weekly Reminder at https://thitaphat29.github.io/Weekly-Reminder/
 >>>>>>> origin/master
 
 ##Technical
