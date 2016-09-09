@@ -18,7 +18,6 @@ The Wireframs is design along with the work-flow. This app is also designed to w
 
 ##Live Site
 You can access Weekly Reminder at https://thitaphat29.github.io/Weekly-Reminder/
->>>>>>> origin/master
 
 ##Technical
 * The front-end is built using HTML5, CSS3 and JavaSrcipt
