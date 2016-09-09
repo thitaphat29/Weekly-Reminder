@@ -63,7 +63,7 @@
 		<section class="site">
 			<h3>Live Site</h3>
 			<hr>
-			<p>You can access Password Vault at <a href="https://thitaphat29.github.io/Weekly-Reminder/">https://thitaphat29.github.io/Weekly-Reminder/</a></p>
+			<p>You can access Weekly Reminder at <a href="https://thitaphat29.github.io/Weekly-Reminder/">https://thitaphat29.github.io/Weekly-Reminder/</a></p>
 		</section>
 
 		<section class="tech">
