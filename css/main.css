@@ -6,6 +6,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	color: #48494b;
+
 }
 
 /* ------ Welcome Page ------ */
@@ -82,21 +83,24 @@ body{
 	color: #5abee2;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
-	border: 1px solid  #f2f2f2;
+	border: 1px solid  #e3e3e3;
 	text-align: center;
 	padding: 20px 0;
 	font-weight: 300;
 	font-size: 30px;
+
 }
 
-.new-task{
-	
+.col-sm-12, .col-md-8{
+	margin-top: -1px;
 }
 
 .weekly-calendar{
 	background-color: #2fbfc0;
 	text-align: center;
 }
+
+
 .calendar-icon{
 	background-image: url("../images/calendar_icon.png");
 	background-size: cover;
@@ -271,9 +275,6 @@ body{
 
 /* Large Desktop */
 @media screen and (min-width: 1200px){
-	.container{
-
-	}
 
 	.year-header,
 	.weekly-calendar,
@@ -470,4 +471,34 @@ body{
 .btn-saveTask{
 	text-align: center;
 	width: 100%;
+}
+
+/*-------------------*/
+.weekly-reminder-app{
+	border: 1px solid #DDDDDD;
+	padding: 30px 40px 50px 50px;
+}
+
+.intro,
+.design,
+.tech{
+	margin-top: 50px;
+}
+
+.img-group{
+	padding: 0 50px;
+	/*border: 1px solid #000;*/
+}
+
+.margin{
+	margin: 20px 0 10px 0;
+}
+
+.img-responsive{
+	margin: 0 auto;
+}
+
+.img-screenshot{
+	width: 400px;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
 }
